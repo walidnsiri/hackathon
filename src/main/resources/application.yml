@@ -1,0 +1,16 @@
+server:
+  port: 8770
+
+spring:
+  application:
+    name: matchmaking
+
+
+authentication:
+  tokenSecret: random913string663written123bywalid99946totest1231this
+  tokenExpirationMsec: 600000 #10 minutes
+  refreshTokenExpirationMsec: 604800000 #7 days
+  accessTokenCookieName: accessToken
+  refreshTokenCookieName: refreshToken
+  jwtIssuer: apii.tn
+  secureTokenValidity: 1800
