@@ -15,16 +15,10 @@ public class Inscription {
 
     @Id
     private ObjectId id;
-    private boolean enabled;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
 
-    public boolean isEnabled() {
-        LocalDateTime now = LocalDateTime.now();
-        return now.isBefore(startDate) && now.isAfter(endDate);
-    }
+    private InscriptionRequest inscriptionRequest;
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
+
+
+
 }

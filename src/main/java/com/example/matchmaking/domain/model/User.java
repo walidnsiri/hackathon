@@ -46,6 +46,8 @@ public class User implements UserDetails {
 
     private Profile profile;
 
+    private Societe societe;
+
     private List<Event> events;
 
     @Override

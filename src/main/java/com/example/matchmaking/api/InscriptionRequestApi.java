@@ -28,7 +28,7 @@ public class InscriptionRequestApi {
         return ResponseEntity.ok().body(inscriptions);
     }
 
-    @PutMapping("/validate/{id}/{validate}")
+    @PostMapping("/validate/{id}/{validate}")
     public ResponseEntity<InscriptionRequest> validate(@PathVariable(value = "id") String id,
                                                        @PathVariable(value = "validate") String validate){
         InscriptionRequest inscriptionRequest = inscriptionRequestService.validate(new ObjectId(id),Boolean.parseBoolean(validate));

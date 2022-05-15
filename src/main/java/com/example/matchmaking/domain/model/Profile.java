@@ -13,5 +13,6 @@ public class Profile {
 
     private String fullName;
     private String profileImage;
+    private String jobTitle;
     private InscriptionRequest inscriptionRequest;
 }
