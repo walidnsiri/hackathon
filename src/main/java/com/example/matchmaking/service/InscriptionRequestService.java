@@ -38,4 +38,14 @@ public class InscriptionRequestService {
                 .findById(id).orElseThrow(()-> new NotFoundException("inscription non trouvé: "+ id));
         return inscriptionRequest;
     }
+
+    public InscriptionRequest validate(ObjectId id,boolean validate){
+        InscriptionRequest inscriptionRequest = inscriptionRequestRepository
+                .findById(id).orElseThrow(()-> new NotFoundException("inscription non trouvé: "+ id));
+
+        inscriptionRequest.setValidated(validate);
+        inscriptionRequest= inscriptionRequestRepository.save(inscriptionRequest);
+        return inscriptionRequest;
+
+    }
 }

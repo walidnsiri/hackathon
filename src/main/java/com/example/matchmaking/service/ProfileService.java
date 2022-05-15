@@ -1,6 +1,7 @@
 package com.example.matchmaking.service;
 
 
+import com.example.matchmaking.domain.exception.NotFoundException;
 import com.example.matchmaking.domain.model.Profile;
 import com.example.matchmaking.repository.ProfileRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,13 +27,14 @@ public class ProfileService {
     }
 
 
-    /*
+    public Profile edit(ObjectId id,Profile profile) {
+        Profile updatedProfile = profileRepository.findById(id)
+                .orElseThrow(()->new NotFoundException("profile not found"));
+        updatedProfile.setFullName(profile.getFullName());
+        updatedProfile.setProfileImage(profile.getProfileImage());
+        updatedProfile = profileRepository.save(updatedProfile);
+        return updatedProfile;
+    }
 
-     Profile profile = null;
-        if(profileData.isPresent()){
-            profile = profileData.get();
-
-        }
-    */
 
 }
