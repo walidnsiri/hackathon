@@ -15,8 +15,6 @@ public class Inscription {
 
     @Id
     private ObjectId id;
-
-    private String description;
     private boolean enabled;
     private LocalDateTime startDate;
     private LocalDateTime endDate;

@@ -1,5 +1,7 @@
 package com.example.matchmaking.configuration.security;
 
+import com.example.matchmaking.configuration.filters.JwtTokenFilter;
+import com.example.matchmaking.domain.model.Role;
 import com.example.matchmaking.repository.UserRepository;
 import org.slf4j.Logger;
 import org.springframework.context.annotation.Bean;
@@ -96,10 +98,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 // Our public endpoints
                 .antMatchers("/api/v1/public/**").permitAll()
-                .antMatchers(HttpMethod.DELETE,"/api/v1/user/**").hasAuthority(Role.USER_ADMIN)
+                /*.antMatchers(HttpMethod.DELETE,"/api/v1/user/**").hasAuthority(Role.USER_ADMIN)
                 .antMatchers(HttpMethod.PUT,"/api/v1/user/**").hasAuthority(Role.USER_ADMIN)
                 .antMatchers(HttpMethod.POST,"/api/v1/user/**").hasAuthority(Role.USER_ADMIN)
-                .antMatchers(HttpMethod.GET,"/api/v1/user/users").access("hasAuthority('USER_ADMIN') or hasAuthority('DSI')")
+                .antMatchers(HttpMethod.GET,"/api/v1/user/users").access("hasAuthority('USER_ADMIN') or hasAuthority('DSI')")*/
                 // Our private endpoints
                 .anyRequest().authenticated();
 

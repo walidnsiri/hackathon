@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Document(collection = "users") @Data
@@ -42,9 +43,10 @@ public class User implements UserDetails {
 
     private Set<Role> authorities = new HashSet<>();
 
-    private String image;
 
     private Profile profile;
+
+    private List<Event> events;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

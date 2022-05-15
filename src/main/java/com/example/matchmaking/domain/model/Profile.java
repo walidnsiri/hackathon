@@ -10,4 +10,8 @@ public class Profile {
 
     @Id
     private ObjectId id;
+
+    private String fullName;
+    private String profileImage;
+    private InscriptionRequest inscriptionRequest;
 }

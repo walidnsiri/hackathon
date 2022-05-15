@@ -1,18 +1,17 @@
 package com.example.matchmaking.repository;
 
 
-import com.example.matchmaking.domain.model.Profile;
+import com.example.matchmaking.domain.model.Meeting;
 import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProfileRepository extends ProfileRepositoryCustom, MongoRepository<Profile, ObjectId> {
+public interface MeetingRepository extends MeetingRepositoryCustom, MongoRepository<Meeting, ObjectId> {
 }
 
-
-interface ProfileRepositoryCustom {}
+interface MeetingRepositoryCustom {}
 
 @RequiredArgsConstructor
-class ProfileRepositoryCustomImpl implements ProfileRepositoryCustom {}
+class MeetingRepositoryCustomImpl implements MeetingRepositoryCustom {}
