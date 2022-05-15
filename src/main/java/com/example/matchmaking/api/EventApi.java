@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path="/api/v1/event")
 @RequiredArgsConstructor
@@ -23,4 +25,16 @@ public class EventApi {
     public Event getEvent(@PathVariable(value = "id") String id){
         return eventService.getEvent(new ObjectId(id));
     }
+
+    @GetMapping("/all")
+    public List<Event> getEvents() {
+        return eventService.getAll();
+    }
+
+    @DeleteMapping("{id}")
+    public Event delete(@PathVariable(value="id") String id){
+        return eventService.delete(new ObjectId(id));
+    }
+
+
 }
